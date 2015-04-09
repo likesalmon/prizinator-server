@@ -1,0 +1,402 @@
+* {
+  font-family:'Roboto', sans-serif;
+} html, body {
+  margin:0;
+  width:100%;
+  height:100%;
+  color:#222;
+  font-size:13px;
+  font-family:'Roboto', sans-serif;
+  float:left;
+} p {
+  margin:0;
+  line-height:1.2;
+} button {
+  border:none;
+  cursor:pointer;
+} ::-webkit-scrollbar {
+  width:5px;
+} ::-webkit-scrollbar-track {
+} ::-webkit-scrollbar-thumb {
+  background-color:#e5e5e5;
+} input {
+  width:100%;
+  padding:5px;
+  box-sizing:border-box;
+  border:solid 1px #ccc;
+  border-radius:0;
+  font-size:14px;
+  color:#555;
+  font-weight:200;
+  font-family:'Roboto', sans-serif;
+} input:hover {
+  border:solid 1px #aaa !important;
+}
+
+.main {
+  width:100%;
+  height:100%;
+  position:absolute;
+  right:0;
+  overflow:hidden;
+}
+
+.transition {
+  transition:0.5s all ease;
+  -moz-transition:0.5s all ease;
+  -webkit-transition:0.5s all ease;
+} .hidden {
+  opacity:0;
+}
+
+.error {
+  margin-top: 20px;
+  color: #c52854;
+}
+
+.noselect {
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+
+.main.ng-enter, .main.ng-leave {
+  transition:0.2s all ease;
+  -moz-transition:0.2s all ease;
+  -webkit-transition:0.2s all ease;
+} .main.ng-enter {
+  -webkit-animation:fadein 0.2s both ease;
+  -moz-animation:fadein 0.2s both ease;
+  animation:fadein 0.2s both ease;
+} .main.ng-leave {
+  -webkit-animation:fadeout 0.2s both ease;
+  -moz-animation:fadeout 0.2s both ease;
+  animation:fadeout 0.2s both ease;
+}
+
+@keyframes fadeout {
+  to {opacity:0;}
+} @-moz-keyframes fadeout {
+  to {opacity:0;}
+} @-webkit-keyframes fadeout {
+  to {opacity:0;}
+} @keyframes fadein {
+  from {opacity:0;}
+  to {opacity:1;}
+} @-moz-keyframes fadein {
+  from {opacity:0;}
+  to {opacity:1;}
+} @-webkit-keyframes fadein {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+
+#settings input.ng-invalid.ng-dirty {
+  border:1px solid #c52854;
+} #settings form.ng-invalid #set-submit {
+  background-color:#e5e5e5;
+  color:#999;
+  cursor:auto;
+} #settings-wrapper {
+  background:#ddd;
+  position:fixed;
+  width:100%;
+  height:100%;
+} #settings {
+  overflow-y:auto;
+  position:relative;
+  padding:100px 20px 10px 20px;
+  box-sizing:border-box;
+  background-color:#f3f3f3;
+  width:420px;
+  height:100%;
+} #settings h1 {
+  text-align:center;
+  top:0;
+  background-color:#666;
+  width:100%;
+  left:0;
+  color:#FFF;
+  margin:0;
+  padding:22px 0;
+  position:absolute;
+  font-weight:300;
+} #settings h1 img {
+  height:40px;
+  vertical-align:middle;
+} #settings table {
+  width:100%;
+  border-collapse:collapse;
+} #settings td {
+  border:inset 1px #ccc;
+  background-color:#fff;
+  border-collapse:collapse;
+} #settings td:hover {
+  border:solid 1px #aaa;
+} #settings td input:hover {
+  border:none !important;
+} #settings table input {
+  border:none;
+} #settings th, .set-title {
+  font-size:13px;
+  font-weight:500;
+  padding:15px 0 10px 0;
+  text-indent:2px;
+  color:#666;
+  text-align:left;
+} #settings label {
+  display:block;
+} #settings input:focus {
+  outline:none;
+} .set-prize {
+  width:80%;
+  padding:4px 10px 4px 0;
+} .set-quantity {
+} #set-list {
+  width:100%;
+  float:left;
+} #set-event {
+  width:100%;
+  float:left;
+  margin-bottom:10px;
+} .set-remove {
+  background-color:#f9f9f9 !important;
+} .set-remove input {
+  background-color:transparent;
+  border-radius:0;
+  padding:0 5px;
+  height:100%;
+  cursor:pointer;
+  font-size:12px;
+} .set-noremove {
+  background-color:#f9f9f9 !important;
+  min-width:
+} .set-noremove input {
+  pointer-events:none;
+  visibility:hidden;
+} #set-submit {
+  width:100%;
+  margin-top:20px;
+  background-color:#28C599;
+  color:#fff;
+  padding:6px;
+  border-radius:0;
+} #set-submit:active {
+  background-color:#35b893;
+}
+
+#selector {
+  width:100%;
+  height:100%;
+  display:table;
+} #left, #right {
+  display:table-cell;
+  vertical-align:top;
+} #left {
+  width:230px;
+} #right {
+  text-align:center;
+  vertical-align:middle;
+} #scrollable {
+  height:100%;
+  overflow:auto;
+}
+
+#sel-list {
+  float:left;
+  display:table;
+} .sel:hover {
+  background-color:#f4f4f4;
+} .sel {
+  display:table-row;
+} .sel p {
+  line-height:1.4;
+  padding-right:10px;
+} .sel-img, .sel-info, .sel-remove {
+  display:table-cell;
+} .sel-img {
+  padding:10px;
+  display:block;
+  width:40px;
+  height:40px;
+  background-color:#ccc;
+  background-size:40px;
+  background-position:center;
+  background-clip:content-box;
+} .sel-info {
+  margin-left:20px;
+  vertical-align:top;
+  padding:10px;
+} .sel-name {
+  font-size:14px;
+  font-weight:bold;
+  color:#28C599;
+} .sel-prize {
+  font-size:14px;
+  color:#666;
+} .sel-remove {
+  color:#aaa;
+  cursor:pointer;
+  vertical-align:middle;
+  opacity:0;
+  padding:6px;
+  background-color:#eee;
+} .sel:hover .sel-remove {
+  opacity:1;
+}
+
+#member {
+  display:inline-block;
+  min-width:230px;
+} #mem-img {
+  width:200px;
+  height:200px;
+  margin:auto;
+  border-radius:50%;
+  border:solid 6px #eee;
+  margin-bottom:20px;
+  background-size:cover;
+  background-color:#ddd;
+  background-position:center;
+} #mem-name > p {
+  font-size:40px;
+  font-weight:bold;
+  color:#28C599;
+  cursor:pointer;
+} #mem-name {
+  position:relative;
+} #mem-name input {
+  display:inline-block;
+  vertical-align:middle;
+  font-size:20px;
+  box-sizing:border-box;
+  margin:0px 0 11px 0;
+  line-height:25px;
+  font-weight:400;
+  text-align:center;
+  border:solid #ddd 1px;
+  color:#666;
+  z-index:20000;
+  position:relative;
+} .noimg {
+  border:none !important;
+  background-image:url('images/prizinatorJS.svg') !important;
+  background-color:transparent !important;
+  border-radius:0 !important;
+  background-size:contain !important;
+  background-repeat:no-repeat;
+}
+
+/* Typehead styling */
+.dropdown-menu {
+  position:absolute;
+  box-shadow:0 0 3px 1px #ddd;
+  z-index:1000;
+  width:100%;
+  display:none;
+  padding:0;
+  box-sizing:border-box;
+  margin:0;
+  list-style:none;
+  background-color:#f9f9f9;
+  border:solid #ddd 1px;
+  border-radius:3px;
+} .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+  text-decoration:none;
+  outline:0;
+  background-color:#ddd;
+} .dropdown-menu > li > a {
+  display:block;
+  padding:5px 20px;
+  clear:both;
+  font-weight:normal;
+  line-height:20px;
+  color:#555;
+  white-space:nowrap;
+} ul#typeahead-13-7038.dropdown-menu.ng-isolate-scope .dropdown-menu {
+  position:absolute;
+  display:none;
+  list-style:none;
+  color:#555;
+  text-align:left;
+  box-sizing:border-box;
+} .dropdown-menu li {
+  list-style:none;
+  font-size:14px;
+<<<<<<< HEAD
+} .default-cursor {
+  cursor: inherit !important;
+=======
+>>>>>>> d1b413e42a7240539a114b213d235a467776b81e
+}
+
+/* Drop down. */
+.list {
+  position:relative;
+} .list:focus {
+  outline:none;
+} .list-result {
+  padding:6px 6px 8px 6px;
+  font-size:22px;
+  color:#555;
+  cursor:pointer;
+  font-weight:500;
+} .list-result:focus {
+  padding-bottom:6px;
+  border-bottom:2px solid #376BBB;
+  outline:0;
+} .list-items {
+  position:absolute;
+  box-shadow:0 0 3px 1px #ddd;
+  width:100%;
+  display:table;
+  z-index:1;
+  font-size:15px;
+  color:#555;
+  background-color:#f9f9f9;
+  text-align:left;
+  box-sizing:border-box;
+  border:solid #ddd 1px;
+} .list-items > div {
+  display:table-row;
+  cursor:pointer;
+  padding:8px;
+} .list-items > div:hover {
+  background-color:#ddd;
+} .list-items > div > div {
+  display:table-cell;
+  vertical-align:middle;
+  padding:5px 10px;
+} .list-count {
+  line-height:20px;
+  text-align:right;
+  font-size:14px;
+  white-space:nowrap;
+}
+
+#options {
+  position:fixed;
+  bottom:0;
+  right:0;
+} #options div {
+  background-color:#dbdbdb;
+  color:#717171;
+  font-weight:500;
+  float:left;
+  cursor:pointer;
+} #options div:nth-child(even) {
+  background-color:#e5e5e5;
+} #options div:active {
+  background-color:#d0d0d0;
+} #options p {
+  padding:10px;
+  line-height:normal;
+} #options a {
+  color:#717171;
+  text-decoration:none;
+  display:block;
+  padding:10px;
+}

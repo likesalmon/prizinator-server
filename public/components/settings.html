@@ -1,0 +1,42 @@
+<div id="settings-wrapper">
+  <div id="settings" ng-controller="settingsCtrl">
+    <h1>Prizinator</h1>
+
+    <form name="settings">
+      <div id="set-eventid">
+        <label class="set-title">Event ID</label>
+        <input name="eventId" type="text"
+               ng-model="eventId" required
+               ng-minlength="9">
+      </div>
+
+      <div id="set-list">
+        <table>
+          <tr>
+            <th>Prize Name</th>
+            <th>Quantity</th>
+          </tr>
+          <tr ng-repeat="prize in prizes">
+            <td class="set-prize">
+              <input type="text" ng-model="prize.name" ng-change="addEmptyEntry(prize)">
+            </td>
+            <td class="set-quantity">
+              <input ng-model="prize.quantity" type="number">
+            </td>
+            <td ng-class="isRemovable(prize) ? 'set-remove' : 'set-noremove'">
+              <input tabindex="-1" type='button' value='' ng-click="removeEntry(prize)">
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <button id="set-submit" ng-disabled="settings.$invalid" ng-click="submit()">
+        Submit
+      </button>
+
+      <p class="error">{{error}}<p>
+    </form>
+
+    <button id="login" ng-click="login()">Log In</button>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div id="selector" ng-controller="selectorCtrl" pi-main tabindex="0">
+  <div id="left">
+    <div id="scrollable" pi-list>
+      <div id="sel-list">
+        <div class="sel" ng-repeat="sel in selected track by $index">
+          <div class="sel-img"
+            style="background-image:url('{{sel.member_photo.thumb_link}}')">
+          </div>
+          <div class="sel-info">
+            <p class="sel-name">{{sel.member.name}}</p>
+            <p class="sel-prize">{{sel.prize.name}}</p>
+          </div>
+          <div class="sel-remove noselect" ng-click="removeFromSelected(sel)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="right">
+    <div id="member">
+      <div id="mem-img"
+        ng-class="!(selectedMember ||
+          selectedMember.member_photo.photo_link.length === 0) ? 'noimg' : ''"
+        ng-style="selectedMember ?
+          {'background-image':
+            'url(\'' + selectedMember.member_photo.photo_link + '\')'} : ''">
+      </div>
+
+      <div id="mem-name" ng-click="searchNames($event)" ng-switch="nameSearch">
+        <p ng-switch-when="false" ng-class="prizesRemaining() ? '' : 'default-cursor'">
+          {{selectedMember ? selectedMember.member.name : 'Prizinator'}}
+        </p>
+        <input ng-switch-when="true" type="text" placeholder="Name" class="form-control"
+          pi-enter="searchNames($event)" ng-model="nameSelected"
+          typeahead="name as name.name for name in names | filter:{name:$viewValue} | limitTo:4">
+      </div>
+
+      <div class="list noselect" ng-click="focus=!focus" ng-blur="focus=false"
+        ng-show="selectedMember" tabindex="1">
+        <div class="list-result">
+          {{selectedPrize.name}}
+        </div>
+        <div ng-show="focus" class="list-items">
+          <div ng-click="setActivePrize(prize)" ng-repeat="prize in prizes">
+            <div>{{prize.name}}</div>
+            <div list-item class="list-count">{{prize.used}} / {{prize.quantity}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div pi-hide class="noselect" id="options">
+      <div ng-click="addToSelected();" ng-if="selectedMember"><p>Add</p></div>
+      <div ng-click="removeMember()" ng-if="selectedMember"><p>Remove</p></div>
+      <div ng-click="selectRandom()" ng-if="prizesRemaining()"><p>Random</p></div>
+      <div><a ui-sref-active="active" ui-sref="settingsState">Settings</a></div>
+    </div>
+  </div>
+</div>
